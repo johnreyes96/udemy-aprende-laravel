@@ -2,13 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return 'Esta es la url raíz';
+Route::get('products', function () {
+    return view('products.index');
 });
 
-Route::put('/', function() {
-    return 'Url raíz por el método post';
-});
+// Route::put('/', function() {
+//     return 'Url raíz por el método post';
+// });
 
 // Route::post();
 
