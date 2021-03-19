@@ -5,7 +5,8 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 
 Route::get('products', function () {
-    return view('products.index');
+    $products = Product::all();
+    return view('products.index', compact('products'));
 })->name('products.index');
 
 Route::get('products/create', function () {
@@ -17,8 +18,8 @@ Route::post('products', function (Request $request) {
     $newProduct->description = $request->input('description');
     $newProduct->price = $request->input('price');
     $newProduct->save();
-    
-    return redirect()->route('products.index');
+
+    return redirect()->route('products.index')->with('info', 'Producto creado exitosamente');
 })->name('products.store');
 
 // Route::put('/', function() {
