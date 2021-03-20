@@ -30,8 +30,8 @@
                             <tbody>
                                 @foreach($products as $product)
                                 <tr>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{ $product->description }}</td>
+                                    <td>{{ $product->price }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
