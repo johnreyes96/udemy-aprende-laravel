@@ -22,6 +22,11 @@ Route::post('products', function (Request $request) {
     return redirect()->route('products.index')->with('info', 'Producto creado exitosamente');
 })->name('products.store');
 
+Route::delete('products/{id}', function ($id) {
+    $product = Product::findOrFail($id);
+    return $product;
+})->name('products.destroy');
+
 // Route::put('/', function() {
 //     return 'Url raíz por el método post';
 // });
