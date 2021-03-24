@@ -42,13 +42,3 @@ Route::put('/products/{id}', function (Request $request, $id) {
 
     return redirect()->route('products.index')->with('info', 'Producto actualizado exitosamente');
 })->name('products.update');
-
-// Route::put('/', function() {
-//     return 'Url raíz por el método post';
-// });
-
-// Route::post();
-
-// Route::put();
-
-// Route::delete();
