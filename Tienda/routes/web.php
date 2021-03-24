@@ -29,6 +29,11 @@ Route::delete('products/{id}', function ($id) {
     return redirect()->route('products.index')->with('info', 'Producto eliminado exitosamente');
 })->name('products.destroy');
 
+Route::get('products/{id}/edit', function ($id) {
+    $product = Product::findOrFail($id);
+    return view('products.edit', compact('product'));
+})->name('products.edit');
+
 // Route::put('/', function() {
 //     return 'Url raíz por el método post';
 // });
